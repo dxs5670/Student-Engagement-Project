@@ -1,7 +1,335 @@
+* {
+    margin: 10px;
+    box-sizing: border-box;
+}
+
 h1 {
-    font: bold normal 13px/150% Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-size: 40px;
+}
+
+.centerContent {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 16px;
+}
+
+ul {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 16px;
 }
 
 nav {
-    font: 15px Arial, Helvetica;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 0;
+  justify-content: space-around;
+}
+nav ul li a {
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-size: 25px;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+}
+
+ul li a:hover {
+  color: grey;
+}
+
+
+/* home */
+
+.showcase {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.event {
+  display: none
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.eventCaption {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.eventTitle {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.event {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes event {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes event {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.active {
+  display: block;
+}
+
+.eventsContainer{
+  width: 100%
+}
+
+.events {
+  float: left;
+  border-style: solid;
+  width: 18%;
+}
+
+
+/* Calendar */
+
+.inviteButton{
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 60px;
+}
+
+.addEventButton{
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 60px;
+}
+
+
+.exportButton{
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 60px;
+}
+
+.lastButton{
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 20%;
+
+}
+
+.nextButton{
+  transform: rotate(180deg);
+  border-radius: 50%;
+  width: 50px;
+}
+
+.monthLabel{
+  border: solid;
+  width: fit-content;
+}
+
+.calendar{
+  width: 80%;
+  height: 500px;
+  border: solid;
+}
+
+.threeDayOverview{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.threeDayOverview div {
+  border: solid;
+}
+
+.day1 {
+  width: 33%;
+  height: 40%;
+
+}
+
+.day2 {
+  width: 33%;
+  height: 40%
+}
+
+
+.day3{
+  width: 33%;
+  height: 40%
+}
+
+.moveMonth {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+}
+
+
+/* Create an Event */
+
+
+.addButton {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+}
+
+.toolBars {
+  display: flex;
+  flex-direction: row;
+}
+
+.eventsListSidebar {
+  width: 15%;
+  height: 80%;
+
+  border: solid;
+}
+
+.eventList {
+  list-style-type: none;
+  height: 500px;
+}
+
+
+.toolMenuSidebar{
+  height: 80%;
+  border: solid;
+  width: 15%;
+}
+
+
+.toolMenu {
+  list-style-type: none;
+  height: 500px;
+}
+
+.toolOptionsHotbar{
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  display: flex;
+}
+
+
+
+.toolOptions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  width: 100%;
+}
+
+
+.toolOptionsHotbar ul li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1px;
+  text-decoration: none;
+  font-size: 12px;
+
+}
+
+.toolOptionsHotbar ul li:hover {
+  background-color: #111111;
 }
