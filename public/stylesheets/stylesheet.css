@@ -66,6 +66,50 @@ Extra (xl) large devices (large desktops, 1200px and up)
 }
 
 /*~~~~~~~~~~~~~~~~
+   Fundraising
+~~~~~~~~~~~~~~~~*/
+.fundraisingTitle {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.fundraisingSubtitle {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.fundraisingCompanynames {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fundraisingBodycopy {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 16px;
+}
+
+.fundraisingPadding {
+  margin: 30px;
+  box-sizing: border-box;
+}
+
+.fundraisingImg {
+  width: 500px;
+  height: 300px;
+  float: right;
+}
+
+
+/*~~~~~~~~~~~~~~~~
       home 
 ~~~~~~~~~~~~~~~~*/
 
