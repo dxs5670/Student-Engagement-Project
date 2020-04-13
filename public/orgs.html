@@ -57,7 +57,17 @@
 
 <H1> Clubs and Organizations at Penn State</h1>
 
-<h2> Athletic Clubs </h2>
+<H1> Clubs and Organizations at Penn State</h1>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Athletic Clubs')">Athletic Clubs</button>
+  <button class="tablinks" onclick="openCity(event, 'Greek Life')">Greek Life</button>
+  <button class="tablinks" onclick="openCity(event, 'Student Councils & Student Government')">Student Councils & Student Government</button>
+  <button class="tablinks" onclick="openCity(event, 'Media and Political Clubs')">Media and Political Clubs</button>
+  <button class="tablinks" onclick="openCity(event, 'Service and Philanthropy')">Service and Philanthropy</button
+</div>
+
+<div id="athletic" class="tabcontent">
+ <h2> Athletic Clubs </h2>
 <!-- insert photo -->
 <h3>Archery</h3>
 <p>Enables the members of the University community to enjoy and promote the sport of archery.</p>
@@ -236,7 +246,9 @@
 <h3>Wrestling</h3>
 <p>Wrestling
 </p>
+</div>
 
+<div id="greek" class="tabcontent">
 <h2> Greek Life </h2>
 *// insert photo *//
 
@@ -303,7 +315,10 @@
 <h3>Zeta Beta Tau</h3>
 <h3>Zeta Psi </h3>
 
-<h2> Student Council and Student Government </h2>
+</div>
+
+<div id="studentgov" class="tabcontent">
+  <h2> Student Council and Student Government </h2>
 *// insert photo *//
 
 <h3>Association of Residence Hall Students</h3>
@@ -374,8 +389,10 @@ Serves as the undergraduate student government at University Park to the adminis
 <h3>West Halls Residence Association</h3><p>
 Provides the student residents of West Halls with a representative form of government so that they may promote, regulate, and coordinate to make living in West a more amazing experience!
 </p>
-
-<h2> Media and Political Clubs </h2>
+</div>
+      
+  <div id="mediapolitics" class="tabcontent">
+  <h2> Media and Political Clubs </h2>
 *// insert photo *//
 
 <h3>Bull-Moose Party</h3><p>
@@ -456,8 +473,10 @@ Every American gets $1000 per month to do whatever they want. Crazy, right? That
 <h3>Young Americans for Liberty</h3><p>
 We identify, educate, train, and mobilize youth activists.
 </p>
-
-<h2> Service and Philanthropy </h2>
+</div>
+      
+ <div id="service" class="tabcontent">
+  <h2> Service and Philanthropy </h2>
 *// insert photo *//
 
 <h3>A Pair for a Dream</h3><p>
@@ -730,6 +749,8 @@ The purpose of the Penn State Volunteer Income Tax Assistance (VITA) program is 
 <h3>Youth Empowerment Program</h3><p>
 The Youth Empowerment Program (YEP) targets vulnerable youth who possess leadership potential but lack opportunities to develop it in a positive way.
 </p>
+</div>
+ 
 
 </body>
 </html>
