@@ -366,3 +366,12 @@ img {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.tabcontent {
+  animation: fadeEffect 1s; 
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
