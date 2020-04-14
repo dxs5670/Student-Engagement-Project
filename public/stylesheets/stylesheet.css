@@ -187,6 +187,12 @@ Extra (xl) large devices (large desktops, 1200px and up)
   to {opacity: 1;}
 }
 
+#banner {
+margin-bottom: 0px;
+text-align: center;
+background-color: ;
+}
+
 
 /*~~~~~~~~~~~~~~~~
    Account
@@ -491,4 +497,6 @@ figure {
 [class*="col-"] {
     padding: 1rem;
 }
+
+
 
