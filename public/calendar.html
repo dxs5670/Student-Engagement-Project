@@ -13,13 +13,14 @@
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
+    
 </head>
 <body>
     
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top"> <!-- Bootstrap Classes-->
         <div class="container-fluid">
             <a href="#" class="navbar-brand"><img class="psuLogo"src="images/psu.png" alt="PSU Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
@@ -54,50 +55,239 @@
         </div>
     </nav>
 
-<div class="moveMonth">
-    <div class="lastButton">
-        <img src="assets/back.svg" alt="">
-
-    </div>
-
-    <div class="nextButton">
-        <img src="assets/back.svg" alt="">
-
-    </div>
-</div>
-
-<div class="main">
-
-    <div class="sidePanel">
-        <div class="monthLabel">
-            <h1>MONTH</h1>
-        </div>
-
-        <div class="addEventButton">
-            <img src="assets/add.svg" alt="">
-
-        </div>
-
-        <div class="exportButton">
-            <img src="assets/export.svg" alt="">
-
-        </div>
-
-        <div class="inviteButton">
-            <img src="assets/share.svg" alt="">
-
-        </div>
-    </div>
 
 
 
     <div class="calendar">
+        <header>
+            <img id="calendarLastButton" class="lastButton" src="images/back.svg" alt="">
+            <h1 id="currentMonth">December 2017</h1>
+            <img id="calendarNextButton" class="nextButton"src="images/back.svg" alt="">
+        </header>
+        <div class="calendarBody">
+            <ul class="weekdays">
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+
+            <!-- Days from previous month -->
+
+            <ul class="days">
+
+                <li class="day last-month">
+                    <div class="date"><p>27</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>28</p></div> 					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>29</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>30</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>31</p></div>    					
+                </li>
 
 
+                <!-- Days in current month -->
 
+                <li class="day">
+                    <div class="date"><p>1</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>2</p></div>   					
+                </li>
+
+            </ul>
+
+            <!-- Row #2 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>3</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>4</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>5</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>6</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>7</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>8</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>9</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #3 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>10</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>11</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>12</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>13</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>14</p></div>   					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>15</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>16</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #4 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>17</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>18</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>19</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>20</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>21</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>22</p></div>   					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>23</p></div>    					
+                </li>
+
+            </ul>
+
+                    <!-- Row #5 -->
+
+            <ul class="days">
+                
+                <li class="day">
+                    <div class="date"><p>24</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>25</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>26</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>27</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>28</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>29</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>30</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #6 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>31</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>1</p></div> <!-- Next Month -->    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>2</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>3</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>4</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>5</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>6</p></div>    					
+                </li>
+
+            </ul>
+
+        </div>
     </div>
 
-</div>
+
+
+
 
 
 
@@ -116,6 +306,6 @@
 </div>
 
 
-
+    <script src="javascripts/calendar.js"></script>
 </body>
 </html>
