@@ -431,6 +431,7 @@ width: 100%;
 ~~~~~~~~~~~~~~~~~~~~~~*/
 
 input[type=text], select, textarea{
+font-family: 'Lato', sans-serif;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -440,11 +441,13 @@ input[type=text], select, textarea{
 }
 
 label {
+font-family: 'Lato', sans-serif;
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
 input[type=submit] {
+font-family: 'Lato', sans-serif;
   background-color: blue;
   color: white;
   padding: 12px 20px;
