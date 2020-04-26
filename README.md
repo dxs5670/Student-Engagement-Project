@@ -1,5 +1,5 @@
 # Student-Engagement-Project
-Student Engagement at Penn State
+Student Engagement application for Penn State
 
 
 # Dependencies:
