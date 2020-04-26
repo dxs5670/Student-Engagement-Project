@@ -1,0 +1,311 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar of Events</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top"> <!-- Bootstrap Classes-->
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand"><img class="psuLogo"src="images/psu.png" alt="PSU Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbar-responsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> 
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li
+                    <li class="nav-item"> 
+                        <a href="createEvent.html" class="nav-link">Add Event</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="orgs.html" class="nav-link">Student Organizations</a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a href="calendar.html" class="nav-link">Events Calendar</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="events.html" class="nav-link">Find Events</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="fundraising.html" class="nav-link">Fundraising</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="signIn.html" class="nav-link">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="calendar">
+        <header>
+            <img id="calendarLastButton" class="lastButton" src="images/back.svg" alt="">
+            <h1 id="currentMonth">December 2017</h1>
+            <img id="calendarNextButton" class="nextButton"src="images/back.svg" alt="">
+        </header>
+        <div class="calendarBody">
+            <ul class="weekdays">
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+
+            <!-- Days from previous month -->
+
+            <ul class="days">
+
+                <li class="day last-month">
+                    <div class="date"><p>27</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>28</p></div> 					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>29</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>30</p></div>    					
+                </li>
+
+                <li class="day last-month">
+                    <div class="date"><p>31</p></div>    					
+                </li>
+
+
+                <!-- Days in current month -->
+
+                <li class="day">
+                    <div class="date"><p>1</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>2</p></div>   					
+                </li>
+
+            </ul>
+
+            <!-- Row #2 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>3</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>4</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>5</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>6</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>7</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>8</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>9</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #3 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>10</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>11</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>12</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>13</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>14</p></div>   					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>15</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>16</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #4 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>17</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>18</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>19</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>20</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>21</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>22</p></div>   					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>23</p></div>    					
+                </li>
+
+            </ul>
+
+                    <!-- Row #5 -->
+
+            <ul class="days">
+                
+                <li class="day">
+                    <div class="date"><p>24</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>25</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>26</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>27</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>28</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>29</p></div>    					
+                </li>
+
+                <li class="day">
+                    <div class="date"><p>30</p></div>    					
+                </li>
+
+            </ul>
+
+            <!-- Row #6 -->
+
+            <ul class="days">
+
+                <li class="day">
+                    <div class="date"><p>31</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>1</p></div> <!-- Next Month -->    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>2</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>3</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>4</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>5</p></div>    					
+                </li>
+
+                <li class="day next-month">
+                    <div class="date"><p>6</p></div>    					
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+<div class="threeDayOverview">
+    <div class="day1">
+        <h2>day, month 00</h2>
+    </div>
+
+    <div class="day2">
+        <h2>day, month 00</h2>
+    </div>
+
+    <div class="day3">
+        <h2>day, month 00</h2>
+    </div>
+</div>
+
+
+    <script src="javascripts/calendar.js"></script>
+</body>
+</html>

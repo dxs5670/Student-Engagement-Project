@@ -1,0 +1,26 @@
+{
+  "name": "node-express-mongo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudmersive-validate-api-client": "^1.2.4",
+    "cookie-parser": "^1.4.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
