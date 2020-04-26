@@ -16,3 +16,5 @@ Student Engagement application for Penn State
 - mongoose-unique-validator plugin
 
  & bootstrap
+
+nodemon (dev)
