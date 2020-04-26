@@ -11,10 +11,10 @@ Student Engagement application for Penn State
 - mongoose
 - morgan
 - body-parser
+- nodemon (dev)
 
 - CloudServeValidator API
 - mongoose-unique-validator plugin
 
  & bootstrap
 
-nodemon (dev)
