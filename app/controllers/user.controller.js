@@ -1,7 +1,9 @@
+// Dependencies
 const User = require('../models/user.model.js');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const passport = require('passport');
 const validateAPI = require('cloudmersive-validate-api-client');
+
 
 //configure validateAPI client for user email address verification
 const client = validateAPI.ApiClient.instance;
@@ -9,57 +11,99 @@ const apiKey = client.authentications['Apikey'];
 apiKey.apiKey = 'ea4ba87f-18fc-4a8a-b8f9-cfe491707d0c';
 var validate = new validateAPI.EmailApi();
 
-// Create and Save a new User (register)
-exports.create = (req, res) => {
 
-        // Validate request
-        if(!req.body.email || !req.body.password) {
-            return res.status(400).send({
-                message: "email and password fields can not be empty"
-            });
+
+// Create and Save a new User (register) (POST)
+exports.create = (req, res, next) => {
+
+    // possible fields
+    const email = req.body.email;
+    const password = req.body.password;
+
+    //check for nonempty fields
+    req.checkBody('email', 'Email is required').notEmpty();
+    req.checkBody('password', 'Password cannot be blank').notEmpty();
+
+    // populate errors for empty fields and invalid email address
+    let errors = req.validationErrors();
+    let emailError = validate.emailPost(email, function(error, data, response) {
+        if (error) {
+            console.log('here');
+            return 'error';
+        } else if (data.ValidAddress == false) {
+            console.log('or here');
+            return 'error';
+        } else {
+            return;
         }
+    });
     
-        // Create a User
-        let user = new User({
+    // Create newUser object if no errors
+    if (errors || emailError) {
+        res.render('register', {
+            errors: errors
+        });
+    } else {
+        let newUser = new User({
             name: req.body.name || "New User",
             email: req.body.email,
             password: req.body.password
         });
+    
 
-        validate.emailPost(req.body.email, function(error, data, response) {
-            if (error) {
-                console.log(error);
-            } else if (data.ValidAddress == false) {
-                return res.status(400).send({ message: "email is invalid"});
-            }
-        });
-        
-        // Save User in the database
-        user.save()
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while creating the User."
+        // Hash the password and save the user 
+        bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(newUser.password, salt, function (err, hash) {
+                if (err) {
+                    console.log(err);
+                }
+                newUser.password = hash;
+                newUser.save(function(err) {
+                    if (err) {
+                        req.flash('danger', 'User is already registered')
+                        res.redirect('/signIn');
+                    } else {
+                        req.flash('success', 'You are registered and now can log in');
+                        res.redirect('/signIn')
+                    }
+                });
             });
         });
+    }
 };
+
 
 // authenticate login attempt
 exports.authenticate = (req, res, next) => {
-    User.findOne({email:req.body.email}, function(err, userInfo) {
-        if (userInfo) {
-            if(bcrypt.compareSync(req.body.password, userInfo.password)) {
-                const token = jwt.sign({id:userInfo._id}, req.app.get('secretKey'), { expiresIn: '1h' });
-                res.json({status:"success", message: "user found", data: {user: userInfo, token: token}});
-            } else {
-                res.json({status: "error", message: "Invalid email or password", data: null});
-            }     
-        } else {
-            res.json({status: "error", message: "User not found"});
-        }
-    });
+    console.log(req.body);
+    passport.authenticate('local', function(err, user, info) {
+        if (err) { return next(err); }
+        if (!user) { 
+            console.log(info);
+            return res.redirect('/signIn'); }
+        req.logIn(user, function(err) {
+          if (err) { return next(err); }
+          return res.redirect('/account');
+        });
+      })(req, res, next);
 };
+
+
+
+// logout user
+exports.logout = (req, res) => {
+    req.logout();
+    req.flash('success', 'You have successfully logged out');
+    res.redirect('/signIn');
+};
+
+
+
+
+
+
+
+
 
 // Retrieve and return all users from the database (admin function)
 exports.findAll = (req, res) => {
@@ -72,6 +116,14 @@ exports.findAll = (req, res) => {
         });
     });
 };
+
+
+
+
+
+
+
+
 
 // Find a single user with a userId (for matching event with person)
 exports.findOne = (req, res) => {

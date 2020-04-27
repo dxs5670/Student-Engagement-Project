@@ -5,7 +5,9 @@ const EventSchema = mongoose.Schema({
     organization: String,
     description: String,
     eventDate: Date,
-    postDate: Date
+    postDate: Date,
+    location: String,
+    userID: String
 }, {
     timestamps: true
 });
