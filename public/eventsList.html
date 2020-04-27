@@ -1,214 +1,90 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Life Events</title>
-    <link rel="stylesheet" href="stylesheets/stylesheet.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="javascripts/eventsList.js"></script>
-</head>
-<body>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top"> <!-- Bootstrap Classes-->
-    <div class="container-fluid">
-        <a href="index.html" class="navbar-brand"><img class="psuLogo"src="images/psu.png" alt="PSU Logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
-            <span class="navbar-toggler-icon"></span>
+    <!-- Local Imports -->
+    <script src="javascripts/eventsList.js"></script>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <!-- Bootstrap Classes-->
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand"
+          ><img class="psuLogo" src="images/psu.png" alt="PSU Logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-responsive"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbar-responsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"> 
-                    <a href="/index" class="nav-link">Home</a>
-                </li
-                <li class="nav-item"> 
-                    <a href="/createEvent" class="nav-link">Add Event</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="/orgs" class="nav-link">Student Organizations</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="/calendar" class="nav-link">Events Calendar</a>
-                </li>
-                <li class="nav-item active"> 
-                    <a href="/eventsList" class="nav-link">Find Events</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="/fundraising" class="nav-link">Fundraising</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="/contact" class="nav-link">Contact Us</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="/signIn" class="nav-link">Account</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/index" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/createEvent" class="nav-link">Add Event</a>
+            </li>
+            <li class="nav-item">
+              <a href="/orgs" class="nav-link">Student Organizations</a>
+            </li>
+            <li class="nav-item">
+              <a href="/calendar" class="nav-link">Events Calendar</a>
+            </li>
+            <li class="nav-item active">
+              <a href="/eventsList" class="nav-link">Find Events</a>
+            </li>
+            <li class="nav-item">
+              <a href="/fundraising" class="nav-link">Fundraising</a>
+            </li>
+            <li class="nav-item">
+              <a href="/signIn" class="nav-link">Account</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<br>
-    <h1 id="events-heading"> Upcoming Events at Penn State and Downtown State College </h1>
+    <br />
+    <h1 id="events-heading">
+      Upcoming Events at Penn State and Downtown State College
+    </h1>
 
-  <div id="page">
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<div class="container">
-  <img src="band.jpg" alt="Notebook" style="width:100%;">
-  <div class="content">
-    <h1>Sidewalk Prophets "Smile Tour"</h1>
-    <p>Friday, Aug 21, 7:00 PM</p>
-  </div>
-</div>
-
-<div class="container">
-  <img src="scott.jpg" alt="Notebook" style="width:100%;">
-  <div class="content">
-    <h1>A Chance to Exhale virtual community</h1>
-    <p>Monday, April 27, 7 – 8 p.m.</p>
-  </div>
-</div>
-
-<div class="container">
-  <img src="museum.jpg" alt="Notebook" style="width:100%;">
-  <div class="content">
-    <h1>Art Exhibition: Women Photojournalists of Washington</h1>
-    <p>Ongoing through Wednesday, April 29, 11 a.m.</p>
-  </div>
-</div>
-
-<div class="container">
-  <img src="web.jpg" alt="Notebook" style="width:100%;">
-  <div class="content">
-    <h1>NonStop Broadway at Webster's</h1>
-    <p>Thursday, Apr 16, 7:00 PM</p>
-  </div>
-</div>
-
- <div id="events" class="tabcontent">
-   <h2 style="text-align: center;"> Events at Penn State </h2>
-
-  <h3>PSU Museum Consortium exhibit: Illuminating Illusions </h3>
-<p>  Ongoing through Sunday, April 19, 8 p.m.
-
-<h3>  QPR (Question, Persuade, Refer) Training: Jana Marie Foundation</h3><p>
-  Monday, March 30, 5:30 – 7 p.m.
-</p>
-<h3>  PSU Museum Consortium exhibit: Illuminating Illusions</h3><p>
-  Ongoing through Sunday, April 19, 8 p.m.
-
-<h3>  Monica Blake Watch Party</h3><p>
-    Thursday, April 2, 6 – 7 p.m. </p>
-    
-<h3>  Art Camp Exhibits</h3><p>
-  UP: HUB 121 Noontime Lounge
-  Friday, June 19, 8 a.m. – 6 p.m.
-</p>
-<h3>  Art Camp Exhibits</h3><p>
-  UP: HUB 121 Noontime Lounge
-  Friday, June 26 - July 24, 8 a.m. – 6 p.m.
-</p>
-<h3>Fall Arrival Parents and Families Information Tables</h3><p>
-Friday, August 21-22, 10:30 a.m. – 3:30 p.m.
-</p>
-<h3>All Campus LGBTQ+ Welcome Reception</h3><p>
-UP: HUB 122 Heritage Hall, UP: HUB 122D Heritage Hall Kitchen
-Wednesday, September 2, 3 – 6:30 p.m.
-October 2020
-</p>
-<h3>Graduate and Professional School Week</h3><p>
-UP: HUB 129 Alumni Hall + 129ABC
-Tuesday, October 21, 6 a.m. – 3 p.m.
-</p>
-
-<div id="state" class="tabcontent">
-   <h2 style="text-align: center;"> Events in State College </h2>
-    
-<h3>Monster Energy Up & Up Festival presents TROYBOI *DATE IS TENTATIVE</h3><p>
-Thu, Aug 27, 8:00 PM
-</p>
-
-<h3>The Devil Wears Prada with Gideon</h3><p>
-Tue, Apr 14, 7:00 PM
-</p>
-<h3>The Lacs - The Rise and Shine Tour</h3><p>
-Fri, Jul 31, 8:00 PM
-</p>
-<h3>ELVIS IN CONCERT STARRING RYAN PELTON</h3><p>
-Fri, Aug 7, 7:30 PM
-</p>
-<h3>The Slackers</h3><p>
-Fri, Jun 5, 8:00 PM
-</p>
-<h3>Sister Hazel</h3><p>
-Sat, May 16, 8:00 PM
-</p>
-<h3>Black Flag</h3><p>
-Sun, Jul 5, 8:00 PM
-</p>
-<h3>Badfish: a Tribute to Sublime</h3><p>
-Wed, Apr 22, 7:30 PM
-</p>
-<h3>E5C4P3: Escape - The Journey Tribute</h3><p>
-Sat, Apr 25, 9:00 PM
-</p>
-<h3>Scott Stapp of Creed</h3><p>
-Fri, Jun 12, 8:00 PM
-</p>
-<h3>The LACS VIP Exclusive Acoustic Package (State College, PA)</h3><p>
-Fri, Jul 31, 6:00 PM
-</p>
-
-<h3>Spring Fever 2020</h3><p>
-Fri, May 29, 3:00 PM
-</p>
-<h3>Mötley Crüe/Def Leppard/Poison/Joan Jett and the Blackhearts</h3><p>
-Tue, Aug 11, 10:00 AM
-</p>
-<h3>Ozzy Osbourne Hersheypark Stadium</h3><p>
-Mon, Jun 8, 3:00 PM
-</p>
-<h3>Black Flag Altoona </h3><p>
-Sat, May 30, 7:00 PM
-</p>
-<h3>Creation Festival Northeast 2020 - Music Tournament</h3><p>
-Wed, Jun 24, 5:00 PM
-</p>
-<h3>USAF Heritage of America Band in Altoona, PA</h3><p>
-Wed, May 20, 7:00 PM
-     </p>
-    </div>
-
-  -->
-</body>
+    <div id="page"></div>
+  </body>
 </html>

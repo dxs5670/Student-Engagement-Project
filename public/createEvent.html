@@ -1,110 +1,159 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create an Event</title>
-    <link rel="stylesheet" href="stylesheets/stylesheet.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!-- Local Imports -->
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" />
     <script src="javascripts/addEvent.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <!-- Bootstrap Classes-->
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand"
+          ><img class="psuLogo" src="images/psu.png" alt="PSU Logo"
+        /></a>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top"> <!-- Bootstrap Classes-->
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img class="psuLogo"src="images/psu.png" alt="PSU Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbar-responsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> 
-                        <a href="/index" class="nav-link">Home</a>
-                    </li
-                    <li class="nav-item active"> 
-                        <a href="/createEvent" class="nav-link">Add Event</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/orgs" class="nav-link">Student Organizations</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/calendar" class="nav-link">Events Calendar</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/eventsList" class="nav-link">Find Events</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/fundraising" class="nav-link">Fundraising</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/contact" class="nav-link">Contact Us</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="/signIn" class="nav-link">Account</a>
-                    </li>
-                </ul>
-            </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-responsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar-responsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/index" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a href="/createEvent" class="nav-link">Add Event</a>
+            </li>
+            <li class="nav-item">
+              <a href="/orgs" class="nav-link">Student Organizations</a>
+            </li>
+            <li class="nav-item">
+              <a href="/calendar" class="nav-link">Events Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a href="/eventsList" class="nav-link">Find Events</a>
+            </li>
+            <li class="nav-item">
+              <a href="/fundraising" class="nav-link">Fundraising</a>
+            </li>
+            <li class="nav-item">
+              <a href="/signIn" class="nav-link">Account</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-<br>
-<br> 
 
-<div id="container-container">
-    <div id="add-event-container" class="container">
-  <form>
-    <div class="row">
-      <div class="col-25">
-        <label for="title">Title of Event</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="title" name="title" placeholder="Enter event title">
+    <br />
+    <br />
+
+    <div id="container-container">
+      <div id="add-event-container" class="container">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="title">Title of Event</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Enter event title"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="date">Date of Event</label>
+            </div>
+            <div class="col-75">
+              <input
+                class="form-control"
+                type="datetime-local"
+                value="2020-01-01T12:00:00"
+                id="date"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="host">Host of Event</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                id="host"
+                name="host"
+                placeholder="Organization"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="country">Location of Event</label>
+            </div>
+            <div class="col-75">
+              <select id="place" name="place">
+                <option value="on">On-Campus</option>
+                <option value="dts">Downtown State College</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="subject">Description</label>
+            </div>
+            <div class="col-75">
+              <textarea
+                id="subject"
+                name="subject"
+                placeholder="Describe the Event..."
+                style="height: 200px;"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row submit-event-button">
+            <input id="submit-event-button" type="submit" value="Submit" />
+          </div>
+        </form>
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="date">Date of Event</label>
-      </div>
-      <div class="col-75">
-        <input class="form-control" type="datetime-local" value="2020-01-01T12:00:00" id="date">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="host">Host of Event</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="host" name="host" placeholder="Organization">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Location of Event</label>
-      </div>
-      <div class="col-75">
-        <select id="place" name="place">
-          <option value="on">On-Campus</option>
-          <option value="dts">Downtown State College</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Description</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Describe the Event..." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row submit-event-button">
-      <input id="submit-event-button" type="submit" value="Submit">
-    </div>
-  </form>
-</div>
-</div>
+  </body>
+</html>

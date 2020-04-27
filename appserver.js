@@ -11,7 +11,6 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const dbConfig = require('./config/database.config.js');
-// Route files
 
 
 // Connect to database and check for errors
@@ -117,7 +116,6 @@ var eventsRouter = require('./app/routes/event.routes.js')(app);
 app.get('/', function(req,res) { res.sendfile(publicPath + '/index.html'); });
 app.get('/signIn', function(req,res) { res.sendfile(publicPath + '/signIn.html'); });
 app.get('/calendar', function(req,res) { res.sendfile(publicPath + '/calendar.html'); });
-app.get('/contact', function(req,res) { res.sendfile(publicPath + '/contact.html'); });
 app.get('/createEvent', function(req,res) { res.sendfile(publicPath + '/createEvent.html'); });
 app.get('/eventsList', function(req,res) { res.sendfile(publicPath + '/eventsList.html'); });
 app.get('/fundraising', function(req,res) { res.sendfile(publicPath + '/fundraising.html'); });

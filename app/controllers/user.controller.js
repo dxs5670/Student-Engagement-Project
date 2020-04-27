@@ -5,13 +5,15 @@ const passport = require('passport');
 const validateAPI = require('cloudmersive-validate-api-client');
 
 
-//configure validateAPI client for user email address verification
+// configure validateAPI client for user email address verification
 const client = validateAPI.ApiClient.instance;
 const apiKey = client.authentications['Apikey'];
 apiKey.apiKey = 'ea4ba87f-18fc-4a8a-b8f9-cfe491707d0c';
 var validate = new validateAPI.EmailApi();
 
-
+/*~~~~~~~~~
+  CREATE
+~~~~~~~~~*/
 
 // Create and Save a new User (register) (POST)
 exports.create = (req, res, next) => {
@@ -73,6 +75,11 @@ exports.create = (req, res, next) => {
 };
 
 
+/*~~~~~~~~~~~
+  LOGIN/OUT
+~~~~~~~~~~~*/
+
+
 // authenticate login attempt
 exports.authenticate = (req, res, next) => {
     console.log(req.body);
@@ -88,8 +95,6 @@ exports.authenticate = (req, res, next) => {
       })(req, res, next);
 };
 
-
-
 // logout user
 exports.logout = (req, res) => {
     req.logout();
@@ -98,21 +103,68 @@ exports.logout = (req, res) => {
 };
 
 
+/*~~~~~~~~~
+    PUT
+~~~~~~~~~*/
+
+// Update a user identified by the userId in the request (for editing account details)
+exports.update = (req, res) => {
+    // Validate Request
+    if(!req.body.email || !req.body.password) {
+        return res.status(400).send({
+            message: "email or password fields can not be empty"
+        });
+    }
 
 
-
-
-
-
-
-// Retrieve and return all users from the database (admin function)
-exports.findAll = (req, res) => {
-    User.find()
-    .then(users => {
-        res.send(users);
+    // Find user and update with the request body
+    User.find(({email: req.params.email }), {
+        name: req.body.name || "New User",
+        email: req.body.email,
+        password: req.body.password
+    }, {new: true})
+    .then(user => {
+        if(!user) {
+            return res.status(404).send({
+                message: "User not found with email " + req.params.email
+            });
+        }
+        res.send(user);
     }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Some error occurred while retrieving users."
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "User not found with email " + req.params.email
+            });                
+        }
+        return res.status(500).send({
+            message: "Error updating user with email " + req.params.email
+        });
+    });
+};
+
+/*~~~~~~~~~
+  DELETE
+~~~~~~~~~*/
+
+
+// Delete a user with the specified userId in the request (delete account)
+exports.delete = (req, res) => {
+    User.find({email: req.params.email})
+    .then(user => {
+        if(!user) {
+            return res.status(404).send({
+                message: "User not found with email " + req.params.email
+            });
+        }
+        res.send({message: "User deleted successfully!"});
+    }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "User not found with email " + req.params.email
+            });                
+        }
+        return res.status(500).send({
+            message: "Could not delete user with email " + req.params.email
         });
     });
 };
@@ -121,6 +173,11 @@ exports.findAll = (req, res) => {
 
 
 
+
+
+/*~~~~~~~~~
+    GET
+~~~~~~~~~*/
 
 
 
@@ -147,58 +204,17 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update a user identified by the userId in the request (for editing account details)
-exports.update = (req, res) => {
-    // Validate Request
-    if(!req.body.email || !req.body.password) {
-        return res.status(400).send({
-            message: "email or password fields can not be empty"
-        });
-    }
 
-    // Find user and update with the request body
-    User.findByIdAndUpdate(req.params.userId, {
-        name: req.body.name || "New User",
-        email: req.body.email,
-        password: req.body.password
-    }, {new: true})
-    .then(user => {
-        if(!user) {
-            return res.status(404).send({
-                message: "User not found with id " + req.params.userId
-            });
-        }
-        res.send(user);
+// Retrieve and return all users from the database (admin function)
+exports.findAll = (req, res) => {
+    User.find()
+    .then(users => {
+        res.send(users);
     }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "User not found with id " + req.params.userId
-            });                
-        }
-        return res.status(500).send({
-            message: "Error updating user with id " + req.params.userId
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving users."
         });
     });
 };
 
-// Delete a user with the specified userId in the request (delete account)
-exports.delete = (req, res) => {
-    User.findByIdAndRemove(req.params.userId)
-    .then(user => {
-        if(!user) {
-            return res.status(404).send({
-                message: "User not found with id " + req.params.userId
-            });
-        }
-        res.send({message: "User deleted successfully!"});
-    }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
-            return res.status(404).send({
-                message: "User not found with id " + req.params.userId
-            });                
-        }
-        return res.status(500).send({
-            message: "Could not delete user with id " + req.params.userId
-        });
-    });
-};
+

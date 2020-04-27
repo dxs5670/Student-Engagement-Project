@@ -17,10 +17,10 @@ module.exports = (app) => {
     app.get('/users/:userId', users.findOne);
 
     // Update a User with userId
-    app.put('/users/:userId', ensureAuthenticated, users.update);
+    app.put('/users', ensureAuthenticated, users.update);
 
     // Delete a User with userId
-    app.delete('/users/:userId', ensureAuthenticated, users.delete);
+    app.delete('/users', ensureAuthenticated, users.delete);
 
 }
 
