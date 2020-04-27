@@ -4,7 +4,7 @@ const EventSchema = mongoose.Schema({
     title: String,
     organization: String,
     description: String,
-    eventDate: Date,
+    eventDate: String,
     postDate: Date,
     location: String,
     userID: String
@@ -12,4 +12,4 @@ const EventSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Event', EventScehema)
+module.exports = mongoose.model('Event', EventSchema)

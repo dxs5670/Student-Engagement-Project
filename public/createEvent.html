@@ -12,7 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
+    <script src="javascripts/addEvent.js"></script>
 </head>
 <body>
 
@@ -26,28 +26,28 @@
             <div class="collapse navbar-collapse" id="navbar-responsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"> 
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="/index" class="nav-link">Home</a>
                     </li
                     <li class="nav-item active"> 
-                        <a href="createEvent.html" class="nav-link">Add Event</a>
+                        <a href="/createEvent" class="nav-link">Add Event</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="orgs.html" class="nav-link">Student Organizations</a>
+                        <a href="/orgs" class="nav-link">Student Organizations</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="calendar.html" class="nav-link">Events Calendar</a>
+                        <a href="/calendar" class="nav-link">Events Calendar</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="events.html" class="nav-link">Find Events</a>
+                        <a href="/eventsList" class="nav-link">Find Events</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="fundraising.html" class="nav-link">Fundraising</a>
+                        <a href="/fundraising" class="nav-link">Fundraising</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="contact.html" class="nav-link">Contact Us</a>
+                        <a href="/contact" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-item"> 
-                        <a href="signIn.html" class="nav-link">Account</a>
+                        <a href="/signIn" class="nav-link">Account</a>
                     </li>
                 </ul>
             </div>
@@ -55,8 +55,10 @@
     </nav>
 <br>
 <br> 
-    <div class="container">
-  <form action="action_page.php">
+
+<div id="container-container">
+    <div id="add-event-container" class="container">
+  <form>
     <div class="row">
       <div class="col-25">
         <label for="title">Title of Event</label>
@@ -70,7 +72,7 @@
         <label for="date">Date of Event</label>
       </div>
       <div class="col-75">
-        <input type="text" id="date" name="date" placeholder="Enter date here">
+        <input class="form-control" type="datetime-local" value="2020-01-01T12:00:00" id="date">
       </div>
     </div>
     <div class="row">
@@ -78,7 +80,7 @@
         <label for="host">Host of Event</label>
       </div>
       <div class="col-75">
-        <input type="text" id="host" name="host" placeholder="Host(s) Names">
+        <input type="text" id="host" name="host" placeholder="Organization">
       </div>
     </div>
     <div class="row">
@@ -97,11 +99,12 @@
         <label for="subject">Description</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Describe the Event.." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Describe the Event..." style="height:200px"></textarea>
       </div>
     </div>
-    <div class="row">
-      <input type="submit" value="Submit">
+    <div class="row submit-event-button">
+      <input id="submit-event-button" type="submit" value="Submit">
     </div>
   </form>
+</div>
 </div>

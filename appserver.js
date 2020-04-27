@@ -14,7 +14,6 @@ const dbConfig = require('./config/database.config.js');
 // Route files
 
 
-
 // Connect to database and check for errors
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
@@ -120,7 +119,7 @@ app.get('/signIn', function(req,res) { res.sendfile(publicPath + '/signIn.html')
 app.get('/calendar', function(req,res) { res.sendfile(publicPath + '/calendar.html'); });
 app.get('/contact', function(req,res) { res.sendfile(publicPath + '/contact.html'); });
 app.get('/createEvent', function(req,res) { res.sendfile(publicPath + '/createEvent.html'); });
-app.get('/events', function(req,res) { res.sendfile(publicPath + '/events.html'); });
+app.get('/eventsList', function(req,res) { res.sendfile(publicPath + '/eventsList.html'); });
 app.get('/fundraising', function(req,res) { res.sendfile(publicPath + '/fundraising.html'); });
 app.get('/orgs', function(req,res) { res.sendfile(publicPath + '/orgs.html'); });
 app.get('/account', function(req,res) { res.sendfile(publicPath + '/account.html'); });

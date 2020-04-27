@@ -1,5 +1,5 @@
-const Event = require('../models/user.model.js');
-
+const Event = require('../models/event.model.js');
+const User = require('../models/user.model.js');
 
 // PRIVATE ROUTE - MUST BE LOGGED IN
 // Create and Save a new Event (POST)
@@ -11,15 +11,16 @@ exports.create = (req, res) => {
     req.checkBody('eventDate', 'Event date is required').notEmpty();
 
     // Capture errors in variable 'errors'
-    let errors = req.validationErrors();
+    let errors = null;
 
     // If there are errors, reload the page. Else, create an event object named 'event'
     if(errors) {
-        res.render('createEvent', {
+        res.render('/createEvent', {
             title: 'Create an event',
             errors: errors
         });
     } else {
+        console.log(req.user)
         let event = new Event({
                 title: req.body.title,
                 organization: req.body.organization || "Penn State",

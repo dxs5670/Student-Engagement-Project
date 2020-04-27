@@ -7,7 +7,7 @@ Student Engagement application for Penn State
 - cookie-parser
 - express
 - jquery (3.4.1)
-- JWT
+- passport.js
 - mongoose
 - morgan
 - body-parser
